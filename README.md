@@ -7,7 +7,7 @@ interactions, regional language support. From weather predictions to crop manage
 
 
 ## Demo
-- Demo video (prototype walkthrough): `https://youtu.be/b1FL3hda1rA`
+- Demo video (prototype walkthrough): `https://www.youtube.com/watch?v=fc93mcKCyEc`
 - Presentation link:  'https://drive.google.com/drive/folders/1YFopROIqWkKpjTTDxeKQANWYiaI3H5-1?usp=sharing'
 
 
