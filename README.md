@@ -31,7 +31,7 @@ KrishiMitra answers farmers’ queries using a **RAG (Retrieval-Augmented Genera
 
 ## step 1,  Install & run
 # clone repo
-git clone https://github.com/vardhman916/KrishiMitra
+git clone https://github.com/kg0505/KrishiMitra
 cd krishimitra
 
 ## step 2, activate environment
