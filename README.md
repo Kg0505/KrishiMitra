@@ -25,63 +25,68 @@ KrishiMitra answers farmers’ queries using a **Retrieval-Augmented Generation 
 ---
 
 ## Features  
-- 🔊 Voice + text queries (supports Hindi + regional Indian languages)  
-- 📚 RAG-backed answers using public datasets (weather, soil, fertilizer, market prices, government schemes)  
-- 🗂️ ChromaDB + LangChain agents for intelligent retrieval  
-- 🖥️ Lightweight Flask web UI for farmer-friendly interactions  
-- ⚡ Retrieval index builder + inference pipeline scripts included  
+1. Voice + text queries (supports Hindi + regional Indian languages)  
+2. RAG-backed answers using public datasets (weather, soil, fertilizer, market prices, government schemes)  
+3. ChromaDB + LangChain agents for intelligent retrieval  
+4. Lightweight Flask web UI for farmer-friendly interactions  
+5. Retrieval index builder + inference pipeline scripts included  
 
 ---
 
 ## Installation & Running  
 
 ### Step 1: Clone the Repository  
--git clone https://github.com/kg0505/KrishiMitra
--cd KrishiMitra
+- git clone https://github.com/kg0505/KrishiMitra
+- cd KrishiMitra
 
 ### Step 2: Setup Environment
--create and activate environment
--conda create -n krishimitra python=3.10
--conda activate krishimitra
+- **create and activate environment**
+- conda create -n krishimitra python=3.10
+- conda activate krishimitra
 
--install dependencies
--pip install -r requirements.txt
+**install dependencies**
+- pip install -r requirements.txt
 
 ### Step 3: Build Vector Store
--python retriever/build_vectorstore.py --output-dir ./vectorstore/chroma_db
+- python retriever/build_vectorstore.py --output-dir ./vectorstore/chroma_db
 
 ### Step 4: Run the App
--python main.py
+- python main.py
+
+---
 
 ## Environment Variables
--Set the following environment variables in a .env file or export them before running:
+- **Set the following environment variables in a .env file or export them before running:**
 
--GEMINI_API_KEY=your_key_here
--GEMINI_API_KEY1=your_key_here
--GEMINI_API_KEY3=your_key_here
--OPENWEATHERMAP_API_KEY=your_key_here
--LOCAL_PRICE_API=http://127.0.0.1...
--GOOGLE_API_KEY=your_key_here
--GOOGLE_CSE_ID=your_id_here
--GOOGLE_APPLICATION_CREDENTIALS=path/to/credentials.json
+- GEMINI_API_KEY=your_key_here
+- GEMINI_API_KEY1=your_key_here
+- GEMINI_API_KEY3=your_key_here
+- OPENWEATHERMAP_API_KEY=your_key_here
+- LOCAL_PRICE_API=http://127.0.0.1...
+- GOOGLE_API_KEY=your_key_here
+- GOOGLE_CSE_ID=your_id_here
+- GOOGLE_APPLICATION_CREDENTIALS=path/to/credentials.json
 
+---
 
 ## Sample Queries
 
--“What will be the weather in Bangalore for the next 5 days?”
--“Recommend fertilizer dosage for wheat per hectare with soil pH = 6.2”
--“Show current mandi price of wheat in [district]”
+- “What will be the weather in Bangalore for the next 5 days?”
+- “Recommend fertilizer dosage for wheat per hectare with soil pH = 6.2”
+- “Show current mandi price of wheat in [district]”
 
+--- 
 
 ## Known Limitations
 
--Requires Internet + external API access
--Limited dialect coverage for some regional languages
--Dependent on dataset completeness
--Credentials must be kept private
+- Requires Internet + external API access
+- Limited dialect coverage for some regional languages
+- Dependent on dataset completeness
+- Credentials must be kept private
 
+---
 
-## 🤝 Credits
+## Credits
 
--This project was collaboratively developed with [Vardhman](https://github.com/vardhman916).  
--Special thanks for contributions in design, development, and testing.
+- This project was collaboratively developed with [Vardhman](https://github.com/vardhman916).  
+- Special thanks for contributions in design, development, and testing.
