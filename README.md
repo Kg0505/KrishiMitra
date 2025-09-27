@@ -1,77 +1,88 @@
-# KrishiMitra (कृषिमित्र)
+# 🌱 KrishiMitra (कृषिमित्र)  
+**AI-Powered Advisor for Farmers** — A multilingual **voice + text assistant** that delivers hyper-local, data-driven agricultural recommendations (weather, soil, fertilizer, market prices, and government schemes).  
 
-**AI-Powered Advisor for Farmers** — a multilingual voice + text assistant that provides hyper-local, data-grounded recommendations (weather, soil, fertilizer, market prices, government schemes).
-KrishiMitra revolutionizes agriculture in rural India by providing farmers with intelligent, data-driven insights. 
-Designed specifically for small-scale farmers, our platform bridges the digital divide by offering voice-based 
-interactions, regional language support. From weather predictions to crop management,fertilizer recommendations to market prices, KrishiMitra serves as your trusted agricultural companion, helping increase productivity while reducing costs and environmental impact.
+KrishiMitra is designed to empower **small-scale farmers in rural India** by bridging the digital divide through **voice-based interactions** and **regional language support**. From weather predictions to crop management, fertilizer advice to mandi prices, KrishiMitra serves as a **trusted digital companion**, helping farmers increase productivity while reducing costs and environmental impact.  
 
+---
 
-## Demo
-- Demo video (prototype walkthrough): `https://www.youtube.com/watch?v=fc93mcKCyEc`
-- Presentation link:  'https://drive.google.com/drive/folders/1YFopROIqWkKpjTTDxeKQANWYiaI3H5-1?usp=sharing'
+## 🎥 Demo  
+- **Project Overview Video (Explanation of KrishiMitra):**  https://youtu.be/fc93mcKCyEc 
+- **Prototype Walkthrough Video:** https://www.youtube.com/watch?v=fc93mcKCyEc
+- **Presentation Link:** https://drive.google.com/drive/folders/1YFopROIqWkKpjTTDxeKQANWYiaI3H5-1?usp=sharing  
 
+---
 
-## About
-KrishiMitra answers farmers’ queries using a **RAG (Retrieval-Augmented Generation)** pipeline:
-- **Input:** voice or text from the web UI  
-- **STT:** Google Cloud Speech-to-Text (`STT.py`)  
-- **Normalization / Translation:** GoogleTrans
-- **Retrieval/Tools:** LangChain → ChromaDB vector store (indexed from `dataset/`)  
-- **LLM:** open-source model (prototype: Gemini) to generate grounded answers  
-- **Output:** translated text returned in UI
+## 📖 About  
+KrishiMitra answers farmers’ queries using a **Retrieval-Augmented Generation (RAG)** pipeline:  
 
-## Features
-- Voice + text queries (Hindi + regional Indian languages)  
-- RAG-backed answers from public datasets (weather, soil, fertilizer, market prices, government schemes)  
-- ChromaDB vector store + LangChain agents for retrieval  
-- Lightweight Flask web UI for simple interactions  
-- Scripts to build the retrieval index and run inference
+1. **Input:** Voice or text query from the web UI  
+2. **STT:** Speech-to-Text via Google Cloud (STT.py)  
+3. **Normalization / Translation:** GoogleTrans  
+4. **Retrieval / Tools:** LangChain + ChromaDB vector store (built from dataset/)  
+5. **LLM:** Open-source model (prototype: Gemini) generates grounded answers  
+6. **Output:** Translated response returned to the UI  
 
-#### now Step for installing and running the code.
+---
 
-## step 1,  Install & run
-# clone repo
+## ✨ Features  
+- 🔊 Voice + text queries (supports Hindi + regional Indian languages)  
+- 📚 RAG-backed answers using public datasets (weather, soil, fertilizer, market prices, government schemes)  
+- 🗂️ ChromaDB + LangChain agents for intelligent retrieval  
+- 🖥️ Lightweight Flask web UI for farmer-friendly interactions  
+- ⚡ Retrieval index builder + inference pipeline scripts included  
+
+---
+
+## ⚙️ Installation & Running  
+
+### Step 1: Clone the Repository  
 git clone https://github.com/kg0505/KrishiMitra
-cd krishimitra
+cd KrishiMitra
 
-## step 2, activate environment
-conda create venv/
+### Step 2: Setup Environment
+# create and activate environment
+conda create -n krishimitra python=3.10
+conda activate krishimitra
 
 # install dependencies
 pip install -r requirements.txt
 
-## Build vector store
-python retriever/build_vectorstore.py 
---output-dir ./vectorstore/chroma_db
+### Step 3: Build Vector Store
+python retriever/build_vectorstore.py --output-dir ./vectorstore/chroma_db
 
-# run app
+### Step 4: Run the App
 python main.py
 
-Open `http://localhost:5000` to access the UI.
+### Environment Variables
 
-## Environment variables
+# Set the following environment variables in a .env file or export them before running:
 
-GEMINI_API_KEY=AIzaSyB8QaeX...
-OPENWEATHERMAP_API_KEY=2234932f05d2d8...
+GEMINI_API_KEY=your_key_here
+GEMINI_API_KEY1=your_key_here
+GEMINI_API_KEY3=your_key_here
+OPENWEATHERMAP_API_KEY=your_key_here
 LOCAL_PRICE_API=http://127.0.0.1...
-GOOGLE_API_KEY=AIzaSyC...
-GOOGLE_CSE_ID=a63e5...
-GEMINI_API_KEY1=AIzaSy...
-GOOGLE_APPLICATION_CREDENTIALS=D:\...
-GEMINI_API_KEY3=AIzaSyC...
+GOOGLE_API_KEY=your_key_here
+GOOGLE_CSE_ID=your_id_here
+GOOGLE_APPLICATION_CREDENTIALS=path/to/credentials.json
 
 
+### Sample Queries
 
-## Sample queries:
-
-* What will be the weather in Bangalore for next 5 days?
-* Recommend fertilizer dosage for wheat per hectare with soil pH = 6.2
-* Show current mandi price of wheat in [district]
-
+“What will be the weather in Bangalore for the next 5 days?”
+“Recommend fertilizer dosage for wheat per hectare with soil pH = 6.2”
+“Show current mandi price of wheat in [district]”
 
 
-**Known limitations**
-* Internet + API dependency
-* Limited dialect coverage
-* Dependent on dataset completeness
-* Credentials must be kept private
+### Known Limitations
+
+Requires Internet + external API access
+Limited dialect coverage for some regional languages
+Dependent on dataset completeness
+Credentials must be kept private
+
+
+### 🤝 Credits
+
+This project was collaboratively developed with [Vardhman](https://github.com/vardhman916/KrishiMitra).  
+Special thanks for contributions in design, development, and testing.
